@@ -3,263 +3,218 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yanlin Qi is a PhD candidate at Universite Paris Cite working on sparse attention algorithms, long-context learning, and efficient LLM reasoning.">
-  <title>Yanlin Qi</title>
-  <link rel="preload" href="assets/photo.png" as="image">
-  <link rel="preload" href="assets/pariskv-framework.png" as="image">
+  <title>Yanlin Qi – Academic Homepage</title>
   <link rel="stylesheet" href="style.css">
+  <!--
+    This homepage is modelled after the layout and feel of Zhao (Bill) Xu’s website
+    (zhaohsu.top).  It consists of a fixed left‑hand sidebar containing a profile
+    picture, name, affiliation and contact icons, and a main content panel on
+    the right.  The main panel includes a top navigation bar, a hero banner
+    highlighting the core research focus, and multiple anchored sections for
+    about, education, research interests, publications, projects and awards.
+
+    The site is completely static and requires no JavaScript.  All images and
+    icons used here live in the local assets directory so the page loads
+    reliably without referencing external CDNs.
+  -->
 </head>
 <body>
-  <header class="site-nav">
-    <a class="brand" href="#top" aria-label="Yanlin Qi home">YQ</a>
-    <nav aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#work">Sparse Attention</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
-    </nav>
-    <div class="nav-icons" aria-label="Profile links">
-      <a href="mailto:yanlinqi7@gmail.com" title="Email"><img src="assets/gmail.svg" alt="Email"></a>
-      <a href="https://github.com/amy-77" target="_blank" rel="noopener" title="GitHub"><img src="assets/github.svg" alt="GitHub"></a>
-      <a href="https://scholar.google.com/citations?user=hyYXTkIAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><img src="assets/googlescholar.svg" alt="Google Scholar"></a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title" role="img" aria-label="Portrait of Yanlin Qi">
-      <div class="hero-content">
-        <p class="eyebrow">Paris-based PhD researcher in sparse attention algorithms</p>
-        <h1 id="hero-title">Yanlin Qi</h1>
-        <p class="hero-copy">
-          I study algorithmic sparse attention for long-context models, with a growing focus
-          on training-side sparsity, attention routing, and efficient reasoning over long sequences.
-        </p>
-        <p class="availability">I am actively looking for research internship opportunities in sparse attention, long-context LLMs, and efficient training.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="mailto:yanlinqi7@gmail.com">
-            <img src="assets/gmail_color.svg" alt=""> Email
-          </a>
-          <a class="button" href="https://scholar.google.com/citations?user=hyYXTkIAAAAJ" target="_blank" rel="noopener">
-            <img src="assets/googlescholar_color.svg" alt=""> Scholar
-          </a>
-          <a class="button" href="assets/CV_YanlinQi_2026_02_10.pdf" target="_blank" rel="noopener">CV</a>
-        </div>
-        <dl class="quick-facts">
-          <div>
-            <dt>Current</dt>
-            <dd>PhD Candidate, Universite Paris Cite</dd>
-          </div>
-          <div>
-            <dt>Research</dt>
-            <dd>Training-side sparse attention, routing, long-context learning</dd>
-          </div>
-          <div>
-            <dt>Recent</dt>
-            <dd>ParisKV accepted to ICML 2026</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="about" class="section section-split">
-      <div class="section-heading">
-        <p class="kicker">About</p>
-        <h2>Algorithm-first research for long-context intelligence.</h2>
-      </div>
-      <div class="section-body">
-        <p>
-          I am a PhD candidate at Universite Paris Cite, advised by
-          <a href="https://helios2.mi.parisdescartes.fr/~themisp/" target="_blank" rel="noopener">Prof. Themis Palpanas</a>.
-          My current direction is to design sparse attention mechanisms that are learnable,
-          stable, and useful during training, so long-context models can reason with less
-          redundant computation while preserving the information they need.
-        </p>
-        <p>
-          Before my PhD, I studied Mathematics at Harbin Institute of Technology, Shenzhen,
-          worked on pattern mining, and collaborated with teams at HKUST, HKUST(GZ), and City
-          University of Hong Kong on learned indexes, data selection, and LLM-driven optimization.
-          These projects shaped how I think about sparse structure, selection objectives, and
-          data-dependent algorithms.
-        </p>
-      </div>
-    </section>
-
-    <section id="work" class="section">
-      <div class="section-heading wide">
-        <p class="kicker">Sparse Attention</p>
-        <h2>From sparse retrieval signals toward trainable sparse attention.</h2>
-      </div>
-      <article class="feature-card">
-        <div class="feature-media">
-          <img src="assets/pariskv-framework.png" alt="ParisKV framework diagram">
-        </div>
-        <div class="feature-content">
-          <div class="paper-meta">
-            <span>ICML 2026</span>
-            <span>arXiv v3, May 2026</span>
-          </div>
-          <h3>ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs</h3>
-          <p class="authors">
-            <strong>Yanlin Qi</strong>, Xinhang Chen, Huiqiang Jiang, Qitong Wang, Botao Peng, Themis Palpanas
-          </p>
-          <p>
-            ParisKV is an algorithmic step in this direction: it studies how to select the
-            useful part of a long attention history under distribution drift, using
-            collision-based candidate selection and calibrated reranking.
-          </p>
-          <ul class="result-list">
-            <li>Accepted to the 43rd International Conference on Machine Learning.</li>
-            <li>Connects attention sparsity, Top-k selection, and robustness under long generation.</li>
-            <li>Up to 2.8x higher decoding throughput than full attention within its runnable range.</li>
-            <li>17x and 44x lower million-token decode latency than MagicPIG and PQCache.</li>
-          </ul>
-          <div class="link-row">
-            <a href="https://arxiv.org/abs/2602.07721" target="_blank" rel="noopener">arXiv</a>
-            <a href="https://arxiv.org/pdf/2602.07721" target="_blank" rel="noopener">PDF</a>
-            <a href="https://github.com/amy-77/ParisKV/tree/main" target="_blank" rel="noopener">Code</a>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section id="research" class="section research-band">
-      <div class="section-heading wide">
-        <p class="kicker">Research</p>
-        <h2>The research story I want to push forward.</h2>
-      </div>
-      <div class="focus-grid">
-        <article class="focus-item">
-          <span>01</span>
-          <h3>Training-Side Sparse Attention</h3>
-          <p>Learning attention patterns and routing policies that reduce redundant computation during model training.</p>
-        </article>
-        <article class="focus-item">
-          <span>02</span>
-          <h3>Retrieval-Aware Attention</h3>
-          <p>Using Top-k selection, approximate search, and sparsity priors to decide which tokens should interact.</p>
-        </article>
-        <article class="focus-item">
-          <span>03</span>
-          <h3>Long-Context Algorithms</h3>
-          <p>Designing robust objectives for long sequences where useful evidence is sparse, shifting, and query-dependent.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="publications" class="section">
-      <div class="section-heading wide">
-        <p class="kicker">Selected Publications</p>
-        <h2>Recent papers and representative earlier work.</h2>
-      </div>
-      <div class="publication-list">
-        <article class="publication-card highlighted">
-          <div class="paper-meta"><span>ICML 2026</span><span>Sparse Attention</span></div>
-          <h3>ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs</h3>
-          <p><strong>Yanlin Qi</strong>, Xinhang Chen, Huiqiang Jiang, Qitong Wang, Botao Peng, Themis Palpanas.</p>
-          <a href="https://arxiv.org/abs/2602.07721" target="_blank" rel="noopener">Paper</a>
-        </article>
-        <article class="publication-card">
-          <div class="paper-meta"><span>2025</span><span>Data Selection</span></div>
-          <h3>LEAD: Iterative Data Selection for Efficient LLM Instruction Tuning</h3>
-          <p>Xiaotian Lin, <strong>Yanlin Qi</strong>, Yizhang Zhu, Themis Palpanas, Chengliang Chai, Nan Tang, Yuyu Luo.</p>
-          <a href="https://arxiv.org/abs/2505.07437" target="_blank" rel="noopener">Paper</a>
-        </article>
-        <article class="publication-card">
-          <div class="paper-meta"><span>PVLDB 2025</span><span>Learned Indexes</span></div>
-          <h3>Why Are Learned Indexes So Effective but Sometimes Ineffective?</h3>
-          <p>Qiyu Liu, Siyuan Han, <strong>Yanlin Qi</strong> (co-first), Jingshu Peng, Jin Li, Longlong Lin, Lei Chen.</p>
-          <a href="https://arxiv.org/abs/2410.00846" target="_blank" rel="noopener">Paper</a>
-        </article>
-        <article class="publication-card">
-          <div class="paper-meta"><span>PVLDB 2025</span><span>Compression</span></div>
-          <h3>Not Small Enough? SegPQ: A Learned Approach to Compress Product Quantization Codebooks</h3>
-          <p>Qiyu Liu, <strong>Yanlin Qi</strong> (co-first), Siyuan Han, Jingshu Peng, Jin Li, Lei Chen.</p>
-        </article>
-        <article class="publication-card">
-          <div class="paper-meta"><span>ACM TOIS</span><span>Recommendation</span></div>
-          <h3>RecRanker: Instruction Tuning Large Language Model as Ranker for Top-k Recommendation</h3>
-          <p>Sichun Luo, Bowei He, Haohan Zhao, Wei Shao, <strong>Yanlin Qi</strong>, Linqi Song.</p>
-          <a href="https://dl.acm.org/doi/abs/10.1145/3705728" target="_blank" rel="noopener">Paper</a>
-        </article>
-        <article class="publication-card">
-          <div class="paper-meta"><span>ESWA 2023</span><span>Pattern Mining</span></div>
-          <h3>Mining Periodic Trends via Closed High-Utility Patterns</h3>
-          <p><strong>Yanlin Qi</strong>, Guoting Chen, Wensheng Gan.</p>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0957417423008588" target="_blank" rel="noopener">Paper</a>
-        </article>
-      </div>
-      <p class="scholar-note">
-        Full list on
-        <a href="https://scholar.google.com/citations?user=hyYXTkIAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
-      </p>
-    </section>
-
-    <section id="experience" class="section timeline-section">
-      <div class="section-heading wide">
-        <p class="kicker">Experience & Education</p>
-        <h2>Training across algorithms, optimization, and long-context modeling.</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <time>2024 - present</time>
-          <h3>PhD Candidate, Universite Paris Cite</h3>
-          <p>Sparse attention algorithms, long-context LLMs, and retrieval-aware sequence modeling. Advised by Prof. Themis Palpanas.</p>
-        </article>
-        <article>
-          <time>Oct 2024 - Dec 2024</time>
-          <h3>Research Assistant, HKUST(GZ)</h3>
-          <p>Worked with Prof. Yuyu Luo on data selection for LLM instruction tuning.</p>
-        </article>
-        <article>
-          <time>Jan 2024 - Apr 2024</time>
-          <h3>Research Assistant, City University of Hong Kong</h3>
-          <p>Worked with Prof. Zhichao Lu on LLM-driven evolutionary computation and automatic algorithm design.</p>
-        </article>
-        <article>
-          <time>Sep 2023 - Mar 2024</time>
-          <h3>Visiting Student, HKUST</h3>
-          <p>Worked with Prof. Qiyu Liu and Prof. Lei Chen on AI-for-database research, including learned indexes.</p>
-        </article>
-        <article>
-          <time>2021 - 2024</time>
-          <h3>MSc in Mathematics, Harbin Institute of Technology, Shenzhen</h3>
-          <p>Pattern mining and high-utility pattern discovery.</p>
-        </article>
-        <article>
-          <time>2017 - 2021</time>
-          <h3>BSc in Statistics, Dalian Maritime University</h3>
-          <p>Graduated with distinction, ranked 1st out of 59 students.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="awards" class="section awards-section">
-      <div class="section-heading">
-        <p class="kicker">Honours</p>
-        <h2>Awards and recognition.</h2>
-      </div>
-      <ul class="award-list">
-        <li>National Scholarship, 2018-2021.</li>
-        <li>First-class Scholarship, Harbin Institute of Technology, 2021-2022.</li>
-        <li>Excellent Master's Thesis, Harbin Institute of Technology, Jan 2024.</li>
-        <li>Innovation & Entrepreneurship Training Programme Award, 2019-2020.</li>
-        <li>Excellent Student Award, Dalian Maritime University, May 2021.</li>
+  <div class="container">
+    <!-- Side bar with profile information -->
+    <aside class="sidebar">
+      <img src="assets/photo.png" alt="Yanlin Qi portrait" class="profile-photo">
+      <h1 class="name">Yanlin Qi</h1>
+      <p class="affiliation">PhD Candidate<br>Université Paris Cité</p>
+      <p class="location"><img src="assets/location.svg" alt="Location icon">Paris, France</p>
+      <!-- Vertical contact list: icons with labels -->
+      <ul class="contact-list">
+        <li><a href="mailto:yanlinqi7@gmail.com" title="Email"><img src="assets/gmail_color.svg" alt="Email icon"><span>Email</span></a></li>
+        <li><a href="https://github.com/amy-77" target="_blank" rel="noopener" title="GitHub"><img src="assets/github_color.svg" alt="GitHub icon"><span>GitHub</span></a></li>
+        <li><a href="https://www.linkedin.com/in/yanlin-qi-456177268/" target="_blank" rel="noopener" title="LinkedIn"><img src="assets/linkedin_color.svg" alt="LinkedIn icon"><span>LinkedIn</span></a></li>
+        <li><a href="https://scholar.google.com/citations?user=hyYXTkIAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><img src="assets/googlescholar_color.svg" alt="Google Scholar icon"><span>Google Scholar</span></a></li>
+        <li><a href="assets/wechat_qr.png" target="_blank" rel="noopener" title="WeChat ID: A18342299417"><img src="assets/wechat_color.svg" alt="WeChat icon"><span>WeChat</span></a></li>
       </ul>
-    </section>
-  </main>
+    </aside>
 
-  <footer class="site-footer">
-    <div>
-      <strong>Yanlin Qi</strong>
-      <span>PhD Candidate, Universite Paris Cite</span>
-    </div>
-    <div class="footer-links">
-      <a href="mailto:yanlinqi7@gmail.com">Email</a>
-      <a href="https://github.com/amy-77" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/yanlin-qi-456177268/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="assets/wechat_qr.png" target="_blank" rel="noopener">WeChat</a>
-    </div>
-  </footer>
+    <!-- Main content area -->
+    <main class="content">
+      <!-- Navigation bar -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#awards">Honours &amp; Awards</a></li>
+        </ul>
+      </nav>
+
+    <!-- Removed hero banner at the user’s request -->
+
+      <!-- About section -->
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <p class="availability-note">
+          I am actively looking for research internship opportunities in sparse attention, large models, and efficient training/inference.
+        </p>
+        <p>
+          Welcome! I am a PhD candidate at <em>Université Paris Cité</em>. My current work focuses on
+          <strong>algorithm-system co-design</strong> for <strong>sparse attention in large models</strong>,
+          covering both <strong>training and inference</strong>. I am fortunate to be advised by
+          <a href="https://helios2.mi.parisdescartes.fr/~themisp/" target="_blank" rel="noopener">Prof. Themis Palpanas</a>.
+        </p>
+        <p>
+          Prior to starting my PhD, I studied Mathematics at <a href="http://en.hitsz.edu.cn/index.htm" target="_blank" rel="noopener">Harbin Institute of Technology, Shenzhen</a> and worked on pattern mining. I have a strong background in mathematics and programming (Java, C++, Python) and enjoy bridging theoretical foundations with real‑world applications.
+        </p>
+        <p>
+          During my MSc and subsequent research assistantships I was fortunate to collaborate with outstanding scholars. At HKUST (Guangzhou) I worked with <a href="https://luoyuyu.vip/" target="_blank" rel="noopener">Prof. Yuyu Luo</a> on <a href="https://arxiv.org/abs/2505.07437" target="_blank" rel="noopener">data selection</a> for LLM instruction tuning.  I also collaborated with <a href="https://www.cse.ust.hk/~leichen/" target="_blank" rel="noopener">Prof. Lei Chen</a> and <a href="https://qyliu-hkust.github.io/" target="_blank" rel="noopener">Dr. QiYu Liu</a> on learned index structures.  At the City University of Hong Kong, under the mentorship of <a href="https://www.cs.cityu.edu.hk/~zhichalu/index_vitae.html" target="_blank" rel="noopener">Prof. Zhichao Lu</a>, I explored multi‑objective optimisation and evolutionary computation, developing LLM‑driven automatic algorithm design (<a href="https://optima.cs.cityu.edu.hk/research/aad.html" target="_blank" rel="noopener">AAD</a>).  These experiences reinforced my commitment to research with real societal impact.
+        </p>
+      </section>
+
+      <!-- Education section -->
+      <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <h3>Université Paris Cité – PhD in Computer Science</h3>
+          <p class="edu-dates">Dec 2024 – present</p>
+          <ul>
+            <li>Research direction: algorithm-system co-design for sparse attention in large models, covering both training and inference.</li>
+            <li>Supervisor: <a href="https://helios2.mi.parisdescartes.fr/~themisp/" target="_blank" rel="noopener">Prof. Themis Palpanas</a>.</li>
+            <li>Currently working on <strong>sparse attention</strong>, attention routing, and long-context large models.</li>
+          </ul>
+        </div>
+        <div class="edu-item">
+          <h3>Harbin Institute of Technology, Shenzhen – MSc in Mathematics</h3>
+          <p class="edu-dates">Sep 2021 – Jan 2024</p>
+          <ul>
+            <li>Supervisors: <a href="https://scholar.google.com/citations?user=UPaA5LQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Prof. Guoting Chen</a> &amp; <a href="https://wsgan001.github.io/" target="_blank" rel="noopener">Prof. Wensheng Gan</a>.</li>
+            <li>Research interests: pattern mining and high‑utility pattern discovery.</li>
+            <li>Selected courses: Functional Analysis, Tensor Analysis, Real &amp; Complex Analysis, Stochastic Processes.</li>
+            <li>GPA: 3.42/4.</li>
+          </ul>
+        </div>
+        <div class="edu-item">
+          <h3>Dalian Maritime University – BSc in Statistics (Distinction)</h3>
+          <p class="edu-dates">Sep 2017 – Jun 2021</p>
+          <ul>
+            <li>Ranking: 1st out of 59 students with GPA 92.9/100.</li>
+            <li>Representative courses: Complex Variable Functions, Mathematical Analysis, Numerical Analysis, Probability Theory, Time Series Analysis and C++ Programming.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Experience section -->
+      <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="edu-item">
+          <h3>Research Assistant, HKUST (Guangzhou)</h3>
+          <p class="edu-dates">Oct 2024 – Dec 2024</p>
+          <ul>
+            <li>Advised by <a href="https://luoyuyu.vip/" target="_blank" rel="noopener">Prof.&nbsp;Yuyu Luo</a> on Data selection.</li>
+            <li>LEAD: Iterative Data Selection for Efficient LLM Instruction Tuning, 2025. <a href="https://arxiv.org/abs/2505.07437" target="_blank" rel="noopener">[link]</a></li>
+          </ul>
+        </div>
+        <div class="edu-item">
+          <h3>Research Assistant, City University of Hong Kong</h3>
+          <p class="edu-dates">Jan 2024 – Apr 2024</p>
+          <ul>
+            <li>Advised by <a href="https://www.cs.cityu.edu.hk/~zhichalu/index_vitae.html" target="_blank" rel="noopener">Prof.&nbsp;Zhichao Lu</a> on LLM-driven evolutionary computation and automatic algorithm design.</li>
+            <li>RecRanker–Instruction Tuning LLM as Ranker for Top‑k Recommendation, ACM TOIS, 2024. <a href="https://dl.acm.org/doi/abs/10.1145/3705728" target="_blank" rel="noopener">[link]</a></li>
+            <li>Automated Algorithm Customisation via Evolutionary Program Search with LLMs, 2025.</li>
+          </ul>
+        </div>
+        <div class="edu-item">
+          <h3>Visiting Student, Hong Kong University of Science &amp; Technology</h3>
+          <p class="edu-dates">Sep 2023 – Mar 2024</p>
+          <ul>
+            <li>Advised by <a href="https://qyliu-hkust.github.io/" target="_blank" rel="noopener">Prof.&nbsp;Qiyu&nbsp;Liu</a> and <a href="https://www.cse.ust.hk/~leichen/" target="_blank" rel="noopener">Prof.&nbsp;Lei&nbsp;Chen</a> on AI‑for‑database research such as learned indexes.</li>
+            <li>Why Are Learned Indexes So Effective but Sometimes Ineffective? VLDB 2025. <a href="https://arxiv.org/abs/2410.00846" target="_blank" rel="noopener">[link]</a></li>
+            <li>Not Small Enough? SegPQ: A Learned Approach to Compress Product Quantization Codebooks, VLDB 2025.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Research interests section -->
+      <section id="research" class="section">
+        <h2>Research Interests</h2>
+        <ul>
+          <li><strong>Sparse attention for large models</strong>: designing algorithmic sparsity mechanisms for both training and inference.</li>
+          <li><strong>Algorithm-system co-design</strong>: connecting attention algorithms, routing objectives, and efficient implementation constraints.</li>
+          <li><strong>Long-context modeling</strong>: studying sparse, query-dependent token interaction patterns for long-sequence reasoning.</li>
+        </ul>
+      </section>
+
+      <!-- Publications section -->
+      <section id="publications" class="section">
+        <h2>Selected Publications</h2>
+        <p>For a complete list see my <a href="https://scholar.google.com/citations?user=hyYXTkIAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a>. Here are a few highlights:</p>
+        <ul>
+          <li>
+            <strong>Yanlin Qi</strong>, Xinhang Chen, Huiqiang Jiang, Qitong Wang, Botao Peng, Themis Palpanas. <strong>ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs</strong>. ICML 2026. <a href="https://arxiv.org/abs/2602.07721" target="_blank" rel="noopener">[link]</a> <a href="https://github.com/amy-77/ParisKV/tree/main" target="_blank" rel="noopener">[code]</a>
+          </li>
+          <li>
+            Xiaotian Lin, <strong>Yanlin Qi</strong>, Yizhang Zhu, Themis Palpanas, Chengliang Chai, Nan Tang, Yuyu Luo. <strong>LEAD: Iterative Data Selection for Efficient LLM Instruction Tuning</strong>. arXiv preprint 2025. <a href="https://arxiv.org/pdf/2505.07437" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            Qiyu Liu<sup>∗†</sup>, Siyuan Han<sup>∗</sup>, <strong>Yanlin Qi<sup>∗</sup></strong>(co-first), Jingshu Peng, Jin Li, Longlong Lin, Lei Chen. <strong>Why Are Learned Indexes So Effective but Sometimes Ineffective?</strong> VLDB 2025. <a href="https://arxiv.org/pdf/2410.00846" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            Qiyu Liu<sup>∗†</sup>, <strong>Yanlin Qi<sup>∗</sup></strong>(co-first), Siyuan Han<sup>∗</sup>, Jingshu Peng, Jin Li, Lei Chen. <strong>Not Small Enough? SegPQ: A Learned Approach to Compress Product Quantization Codebooks</strong>. VLDB 2025.
+          </li>
+          <li>
+            Sichun Luo, Bowei He, Haohan Zhao, Wei Shao, <strong>Yanlin Qi</strong>, Linqi Song. <strong>RecRanker: Instruction Tuning Large Language Model as Ranker for Top‑k Recommendation</strong>. ACM Transactions on Information Systems, 2023. <a href="https://dl.acm.org/doi/abs/10.1145/3705728" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            <strong>Yanlin Qi</strong>, Guoting Chen, Wensheng Gan. <strong>Mining periodic trends via closed high‑utility patterns</strong>. <em>Expert Systems with Applications</em>, 2023. <a href="https://www.sciencedirect.com/science/article/pii/S0957417423008588" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            <strong>Yanlin Qi</strong>, Guoting Chen. <strong>Mining Valuable Fuzzy Patterns via the RFM Model</strong>. ICDMW 2022. <a href="https://ieeexplore.ieee.org/document/10031151" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            Xiaojie Zhang, <strong>Yanlin Qi</strong>, Guoting Chen, Wensheng Gan. <strong>Fuzzy‑driven periodic frequent pattern mining</strong>. <em>Information Sciences</em>, 2022. <a href="https://www.sciencedirect.com/science/article/pii/S0020025522012816" target="_blank" rel="noopener">[link]</a>
+          </li>
+          <li>
+            <strong>Yanlin Qi</strong>, Guoting Chen, Wensheng Gan. <strong>F‑RFM‑Miner: An efficient algorithm for mining valuable fuzzy patterns via the RFM model</strong>. <em>Applied Intelligence</em>, 2023. <a href="https://link.springer.com/article/10.1007/s10489-023-04990-x" target="_blank" rel="noopener">[link]</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Projects section -->
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-item">
+          <h3><a href="https://maifile.cn/est/d65f7cb4305bcd/pdf" target="_blank" rel="noopener">Multi‑Objective Optimisation for Resource Management in Big Data Processing</a></h3>
+          <p class="project-dates">Jun 2023 – Aug 2023</p>
+          <p>Transformed stage‑level multi‑objective optimisation into query‑level optimisation for resource allocation in big data workflows. Proved that the query‑level Pareto frontier can be derived from stage‑level optima and designed <strong>getQueryPOSet</strong> algorithms with reduced complexity.</p>
+        </div>
+        <div class="project-item">
+          <h3><a href="https://maifile.cn/est/d65f7cc8faa74b/pdf" target="_blank" rel="noopener">Knowledge Discovery on Multi‑temporal Data</a></h3>
+          <p class="project-dates">Oct 2021 – Jan 2023</p>
+          <p>Explored association rule mining on multi‑temporal databases, introducing fuzzy datasets and negative‑utility datasets. Developed specialised algorithms for periodic, closed and stable periodic patterns in sequences and graphs.</p>
+        </div>
+      </section>
+
+      <!-- Awards section -->
+      <section id="awards" class="section">
+        <h2>Honours &amp; Awards</h2>
+        <ul>
+          <li>National Scholarship (×3), 2018–2021.</li>
+          <li>First‑class Scholarship, Harbin Institute of Technology (×3), 2021–2022.</li>
+          <li>Excellent Master’s Thesis (top 2%) at Harbin Institute of Technology, Jan 2024.</li>
+          <li>Top 10, Agentic Hackathon Paris.</li>
+          <li>Innovation &amp; Entrepreneurship Training Programme Award, 2019–2020.</li>
+          <li>Excellent Student Award, Dalian Maritime University, May 2021.</li>
+          <li>Multiple prizes in mathematics competitions at Dalian Maritime University.</li>
+        </ul>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="footer">
+        <p>Feel free to reach out—whether it’s a quick question or something more in‑depth! I’m always open to connecting and typically respond within 24 hours unless I’m on a tight deadline. You can reach me by email or on <strong>WeChat/LinkedIn</strong>—see the icons on the left. Looking forward to connecting!</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>

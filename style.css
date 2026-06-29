@@ -1,293 +1,189 @@
-/*
- * Global styles for Yanlin Qi’s academic homepage.  The design is kept
- * clean and minimalistic, inspired by Zhao (Bill) Xu’s personal site.  A
- * sidebar anchors the visitor with key information while the right panel
- * contains the substantive narrative.  Colours are chosen to be
- * accessible and professional: dark grey for primary text, muted
- * accents for secondary information and a blue accent for interactivity.
- */
-
-:root {
-  --accent: #005ecb;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --border-colour: #e0e0e0;
-  --background-light: #fafafa;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@charset "utf-8";
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: var(--text-primary);
-  background-color: #ffffff;
-  line-height: 1.6;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding-top: 5rem;
 }
 
-.container {
-  display: flex;
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 700;
 }
 
-/* Sidebar styles */
-/* Sidebar width reduced for a sleeker look */
-.sidebar {
-  width: 220px;
-  background-color: var(--background-light);
-  border-right: 1px solid var(--border-colour);
-  padding: 1.5rem;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  overflow-y: auto;
+a {
+  color: #005ecb;
+}
+
+.navbar {
+  opacity: 0.96;
+}
+
+.navbar-toggler {
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.profile-card {
+  margin-top: 0.25rem;
+}
+
+.text-profile-position {
+  color: #555;
+  font-weight: 400;
+}
+
+.text-profile-bio {
+  color: #333;
+  font-weight: 400;
+}
+
+.profile-photo-column {
+  margin-top: 0.35rem;
 }
 
 .profile-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  display: block;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-}
-
-.name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.affiliation {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.location {
-  display: flex;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.location img {
-  width: 16px;
-  height: 16px;
-  margin-right: 0.4rem;
-}
-
-/* Contact list: display vertically with icons and labels */
-.contact-list {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-.contact-list li {
-  margin-bottom: 0.6rem;
-}
-
-.contact-list li a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-}
-
-.contact-list li a img {
-  width: 22px;
-  height: 22px;
-  margin-right: 0.4rem;
-  transition: transform 0.2s;
-}
-
-.contact-list li a:hover img {
-  transform: scale(1.1);
-}
-
-/* Main content area */
-.content {
-  flex: 1;
-  margin-left: 220px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Navigation bar */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--border-colour);
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0.5rem 1rem;
-}
-
-.navbar li {
-  margin-right: 1rem;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: var(--text-primary);
-  padding: 0.35rem 0.6rem;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-  font-weight: 500;
-}
-
-.navbar a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-/* Hero banner */
-.hero {
-  position: relative;
-  margin: 1.2rem 1rem;
-  border-radius: 6px;
-  overflow: hidden;
+  width: 200px;
   height: 200px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-.hero-bg {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center top;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.profile-motto {
+  max-width: 200px;
+  color: #777;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.45;
   text-align: center;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-.hero-text h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-.hero-text p {
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-}
-
-/* Section styling */
-.section {
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-colour);
-}
-
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.section p,
-.section ul {
-  margin-bottom: 0.8rem;
 }
 
 .availability-note {
-  padding: 0.6rem 0.8rem;
-  border-left: 3px solid var(--accent);
+  padding: 0.55rem 0.75rem;
+  border-left: 3px solid #005ecb;
   background-color: #f2f7fd;
-  font-weight: 600;
+  color: #222;
+  font-weight: 700;
 }
 
-.section ul {
-  padding-left: 1.2rem;
+.contact-links {
+  line-height: 2;
 }
 
-.section ul li {
-  margin-bottom: 0.5rem;
+.no-break {
+  white-space: nowrap;
 }
 
-.edu-item,
-.project-item {
-  margin-bottom: 1rem;
+.mini-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  color: #495057;
+  font-size: 0.65rem;
+  font-weight: 700;
 }
 
-.edu-item h3,
-.project-item h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
+.award-list li {
+  margin-bottom: 0.35rem;
 }
 
-.edu-dates,
-.project-dates {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.4rem;
+.news-scroll-container {
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-color: #ccc transparent;
+  scrollbar-width: thin;
 }
 
-/* About section photo styling */
-.about-photo {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 1rem;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+.news-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.news-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 2px;
+}
+
+.publication-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.publication-cover {
+  display: flex;
+  flex: 0 0 92px;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  border-radius: 4px;
+  background: #f0f3f7;
+  color: #4d5a66;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.publication-body h5 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.badge-publication,
+.badge {
+  font-size: 85%;
+}
+
+.publication-links a {
+  margin-right: 0.4rem;
 }
 
 .footer {
-  padding: 1rem 1.5rem;
-  margin-top: auto;
-  background-color: var(--background-light);
-  border-top: 1px solid var(--border-colour);
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  margin-top: 1rem;
 }
 
-.footer .quote {
-  font-style: italic;
-  margin-top: 0.6rem;
-  color: var(--text-primary);
-}
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 4.5rem;
+  }
 
-@media (max-width: 768px) {
-  /* Collapse sidebar on small screens */
-  .sidebar {
-    position: relative;
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--border-colour);
+  .profile-photo-column {
+    margin-top: 1rem;
   }
-  .content {
-    margin-left: 0;
-  }
-  .navbar ul {
-    justify-content: space-around;
-  }
-  .hero {
-    margin: 1rem 0.5rem;
+
+  .profile-photo {
+    width: 180px;
     height: 180px;
+  }
+
+  .publication-item {
+    display: block;
+  }
+
+  .publication-cover {
+    width: 100%;
+    height: 54px;
+    margin-bottom: 0.75rem;
   }
 }
